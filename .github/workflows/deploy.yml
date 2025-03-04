@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
             #Root user login
-            sudo su
+            # sudo su
             
             # Update system
             apt update && apt upgrade -y
