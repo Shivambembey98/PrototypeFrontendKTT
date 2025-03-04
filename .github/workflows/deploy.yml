@@ -44,7 +44,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-            - name: SSH into EC2 and deploy Angular app
+      - name: SSH into EC2 and deploy Angular app
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
