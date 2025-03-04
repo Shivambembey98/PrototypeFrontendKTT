@@ -1,0 +1,78 @@
+/* custom css */
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo-text {
+  display: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: absolute;
+  font-size: 8px;
+  bottom: -5px;
+  font-family: var(--poppins);
+}
+
+.logo-img {
+  transition: all 0.9s ease-in-out;
+}
+.logo-img:hover {
+  transform: scale(0.7);
+}
+.logo-img:hover + .logo-text {
+  display: block;
+}
+
+.navbar-nav {
+  margin-left: 25px !important;
+}
+
+option:focus {
+  border: none !important;
+}
+.login-btn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.signup-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.dropdown-toggle:focus {
+  border: none;
+}
+
+.nav-tabset > div > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.nav-tabset > div > label {
+  /* position: relative; */
+  /* display: inline-block; */
+  /* border: 1px solid transparent; */
+  /* border-bottom: 0; */
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.nav-tabset > div {
+  border: 1px solid black;
+  padding: 3px 6px;
+}
+.nav-tabset > div:hover {
+  color: var(--primary);
+  background-color: #daf4ff;
+}
+
+label {
+  margin-left: 5px;
+}

@@ -1,0 +1,136 @@
+#hero {
+  position: relative;
+}
+
+#hero > .form {
+  position: absolute;
+  top: 30px;
+  left: 120px;
+}
+
+.carousel-item {
+  height: 700px !important;
+}
+.item-one {
+  background: linear-gradient(
+      228deg,
+      rgba(238, 238, 238, 0.486) 0%,
+      rgba(84, 206, 240, 0.486) 100%
+    ),
+    url(../../../assets/images/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-two {
+  background: linear-gradient(
+      228deg,
+      rgba(238, 238, 238, 0.486) 0%,
+      rgba(84, 206, 240, 0.486) 100%
+    ),
+    url(../../../assets/images/hero1.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-three {
+  background: linear-gradient(
+      228deg,
+      rgba(238, 238, 238, 0.486) 0%,
+      rgba(84, 206, 240, 0.486) 100%
+    ),
+    url(../../../assets/images/hero2.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#offers {
+  background-color: #f3f7fc;
+}
+
+.card-body > .sub-text {
+  background-color: #6ac2e4;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 14px;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.card-body > .five-mins {
+  padding: 3px 6px;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+#cta {
+  background-color: #f5f5f5;
+}
+
+/* card-css */
+.insight-card {
+  height: 254px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8rem;
+  border: 1px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.text-body {
+  color: rgb(134, 134, 134);
+}
+
+/*Text*/
+.text-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*Hover*/
+.insight-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+}
+
+/* offer card css */
+.offer-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+.offer-card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  font-family: "Poppins" sans-serif;
+}
+
+/* .textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */

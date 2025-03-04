@@ -1,0 +1,8 @@
+.payment-card {
+    width: 25%;
+}
+
+.continue-btn {
+    background-color: var(--primary);
+    color: var(--white);
+}

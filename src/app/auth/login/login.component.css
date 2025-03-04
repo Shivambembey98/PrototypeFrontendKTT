@@ -1,0 +1,33 @@
+.loginBtn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+a {
+    font-size: 10px !important;
+}
+.main {
+  background: white;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  /* font-size: 18px; */
+  font-family: var(--poppins);
+}
+.err-msg {
+  font-size: 14px;
+}
+.active {
+  background-color: var(--primary) !important;
+}
+
+input[type="button"] {
+  width: 100%;
+}
+input[type="button"]:focus {
+  background-color: var(--primary);
+  color: white;
+}

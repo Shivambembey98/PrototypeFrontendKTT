@@ -1,0 +1,43 @@
+a {
+    text-decoration: none;
+    font-family: var(--poppins);
+    font-weight: 500;
+}
+.no-of-flights {
+    background-color: var(--light);
+}
+.book-flight {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.one {
+  display: flex;
+  justify-content: center;
+  background-color: var(--light);
+}
+.two {
+    background-color: var(--primary);
+}
+
+.departure button, .arrival button {
+    width: 130px;
+    border: 1px solid var(--primary);
+    text-align: center;
+} 
+
+.departure button:hover, .arrival button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--black);
+}
+
+#select-ticket {
+    background-color: #DAF4FF;
+}
+#selected-ticket {
+    background-color: var(--primary);
+    color: white;
+}
+.ticket-ready {
+    background-color: var(--primary);
+}

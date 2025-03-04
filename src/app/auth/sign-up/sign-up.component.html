@@ -1,0 +1,116 @@
+<div class="container my-1 d-flex justify-content-center" style="height: 100vh">
+  <div class="main">
+    <div class="row card" style="width: 23rem">
+      <div class="card-body">
+        <h5 class="text-center">Sign Up!</h5>
+        <hr class="mb-5" />
+        <div class="container my-4">
+          <form>
+            <div class="login-container">
+              <div class="row">
+                <div class="mb-4 input-group">
+                  <input
+                    class="form-control"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                  />
+
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <img src="assets/svgs/user.svg" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4 input-group">
+                <input
+                  class="form-control"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <img src="assets/svgs/gmail.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-4 input-group">
+                <input
+                  class="form-control"
+                  name="password"
+                  [type]="showPassword ? 'text' : 'password'"
+                  placeholder="Enter your password"
+                  required
+                />
+                <div class="input-group-append" (click)="togglePassword()">
+                  <span class="input-group-text">
+                    <img
+                      *ngIf="showPassword"
+                      src="../../../assets/svgs/view.svg"
+                      alt=""
+                    />
+                    <img
+                      *ngIf="!showPassword"
+                      src="../../../assets/svgs/view-off.svg"
+                      alt=""
+                    />
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-1 input-group">
+                <input
+                  class="form-control"
+                  name="number"
+                  type="number"
+                  placeholder="Enter your mobile number"
+                  required
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <img src="assets/svgs/phone.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-4 text-end">
+                <a href="" style="font-size: 13px">Forget Password?</a>
+              </div>
+
+              <div class="mb-3">
+                <button
+                  style="width: 100%"
+                  type="button"
+                  class="btn btn-continue text-light"
+                >
+                  Create Account
+                </button>
+              </div>
+
+              <div class="row mb-4">
+                <span style="font-size: 13px"
+                  >Already have an account ?
+                  <a href="/login">Sign In here</a></span
+                >
+              </div>
+
+              <div class="row">
+                <span style="font-size: 8px">
+                  By proceeding, you agree to KwikTravelTrip
+                  <a href="">Privacy Policy</a>,
+                  <a href="">User Agreement</a>and <a href="">T&Cs</a>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

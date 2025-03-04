@@ -1,0 +1,190 @@
+<div class="container my-1 d-flex justify-content-center" style="height: 80vh">
+  <div class="main">
+    <div class="row card" style="width: 23rem">
+      <div class="card-body col-lg-12">
+        <h5 class="heading text-center">Login!</h5>
+        <hr class="" />
+        <div class="container-fluid">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="Email"
+                (click)="toggleEmailLogin()"
+              />
+            </li>
+            <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="Mobile"
+                (click)="toggleMobileLogin()"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <!-- Login form with email and password -->
+        <div *ngIf="isEmailLogin" class="container my-4">
+          <form>
+            <div class="login-container">
+              <div class="row">
+                <div class="mb-4 input-group">
+                  <input
+                    class="form-control"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <img src="assets/svgs/gmail.svg" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="mb-2 input-group">
+                  <input
+                    class="form-control"
+                    name="password"
+                    [type]="showPassword ? 'text' : 'password'"
+                    placeholder="Enter your password"
+                    required
+                  />
+                  <div
+                    class="input-group-append"
+                    style="cursor: pointer"
+                    (click)="togglePassword()"
+                  >
+                    <span class="input-group-text">
+                      <img
+                        *ngIf="showPassword"
+                        src="assets/svgs/view.svg"
+                        alt=""
+                      />
+
+                      <img
+                        *ngIf="!showPassword"
+                        src="assets/svgs/view-off.svg"
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4 text-end">
+                <a href="">Forget Password?</a>
+              </div>
+
+              <div class="mb-3">
+                <button style="width: 100%" type="button" class="btn loginBtn">
+                  Login
+                </button>
+              </div>
+
+              <div class="row text-center">
+                <span style="font-size: 12px"
+                  >Don't have an account?
+                  <a href="/register">Register here!</a></span
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Login form with mobile and otp -->
+        <div *ngIf="isMobileLogin" class="container my-4">
+          <form>
+            <div class="login-container">
+              <div class="row">
+                <div class="mb-4 input-group">
+                  <input
+                    class="form-control"
+                    type="number"
+                    placeholder="Enter your mobile number"
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <img src="assets/svgs/phone.svg" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <button
+                  style="width: 100%"
+                  type="button"
+                  class="btn loginBtn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#verifyOtpModal"
+                >
+                  Send OTP
+                </button>
+              </div>
+
+              <div class="row text-center">
+                <span style="font-size: 12px"
+                  >Don't have an account?
+                  <a href="/register">Register here!</a></span
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="verifyOtpModal"
+  tabindex="-1"
+  aria-labelledby="verifyOtpModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="verifyOtpModalLabel">Verfiy OTP</h5>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="mb-4">
+            <div>
+              <h6>OTP</h6>
+            </div>
+
+            <form>
+              <div class="login-container">
+                <div class="row mb-4">
+                  <input
+                    class="form-control"
+                    type="number"
+                    placeholder="Enter your OTP"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer text-start">
+        <button type="button" class="btn loginBtn" data-bs-dismiss="modal">
+          Verify OTP
+        </button>
+        <button type="button" class="btn loginBtn" data-bs-dismiss="modal">
+          Resend OTP
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

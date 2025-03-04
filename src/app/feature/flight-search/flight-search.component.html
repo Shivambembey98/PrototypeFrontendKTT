@@ -1,0 +1,197 @@
+<div class="container d-flex justify-content-bewtween my-5 gap-4">
+  <div class="card h-100" style="width: 40%">
+    <div class="card-body">
+      <form action="">
+        <div class="d-flex justify-content-between align-items-center">
+          <h5 class="">Filter</h5>
+          <div>
+            <input type="reset" class="btn btn-outline-danger" />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="customRange1" class="form-label">Price</label>
+          <input
+            type="range"
+            id="range-slider"
+            class="form-range"
+            id="customRange1"
+          />
+          <div class="d-flex justify-content-between">
+            <span>₹1800</span>
+            <span>₹150000</span>
+          </div>
+        </div>
+
+        <div class="departure mb-5">
+          <div class="departure-info mb-4">
+            <span>Departure Time</span>
+            <h5>From Bengaluru</h5>
+          </div>
+
+          <div class="">
+            <div class="d-flex justify-content-between my-3">
+              <button type="button" class="btn d-flex flex-column">
+                <span>Early Morning</span>
+                <span>00:00-06:00</span>
+              </button>
+
+              <button type="button" class="btn d-flex flex-column">
+                <span>Morning</span>
+                <span>06:00-12:00</span>
+              </button>
+            </div>
+
+            <div class="d-flex justify-content-between my-3">
+              <button type="button" class="btn d-flex flex-column">
+                <span>Afternoon</span>
+                <span>12:00-18:00</span>
+              </button>
+
+              <button type="button" class="btn d-flex flex-column">
+                <span>Evening</span>
+                <span>08:00-00:00</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrival mb-5">
+          <div class="arrival-info mb-4">
+            <span>Arrival Time</span>
+            <h5>From New Delhi</h5>
+          </div>
+
+          <div class="">
+            <div class="d-flex justify-content-between my-3">
+              <button type="button" class="btn d-flex flex-column">
+                <span>Early Morning</span>
+                <span>00:00-06:00</span>
+              </button>
+
+              <button type="button" class="btn d-flex flex-column">
+                <span>Morning</span>
+                <span>06:00-12:00</span>
+              </button>
+            </div>
+
+            <div class="d-flex justify-content-between my-3">
+              <button type="button" class="btn d-flex flex-column">
+                <span>Afternoon</span>
+                <span>12:00-18:00</span>
+              </button>
+
+              <button type="button" class="btn d-flex flex-column">
+                <span>Evening</span>
+                <span>08:00-00:00</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="stop">
+          <h5>Transit</h5>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Non-Stop
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              1 Stop
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              2 Stop
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row text-center my-1">
+      <span class="no-of-flights">604 Flight Found</span>
+    </div>
+
+    <div class="row text-white text-center">
+      <span class="ticket-ready">Your Ticket Ready</span>
+    </div>
+
+    <div class="row card my-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="">Bengaluru(BLR)</div>
+        <div class="d-flex flex-column text-center">
+          <span>4h 15m</span>
+          <span>1 Transit</span>
+        </div>
+        <div class="">New Delhi(DEL)</div>
+      </div>
+      <hr />
+
+      <div class="mb-3 d-flex justify-content-between align-items-center">
+        <div class="">
+          <span>Total Fare:</span>
+          <span>12587</span>
+        </div>
+
+        <div class="">
+          <button class="btn book-flight" routerLink="/flight-details">
+            Book Flight
+          </button>
+          <!-- <img src="" alt=""> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 my-2" *ngFor="let e of cardData">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <p class="card-title">{{ e.title }}</p>
+              <span class="text-danger">{{ e.seat_left }} seats left</span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex gap-4">
+                <p>11:45</p>
+                <span><img src="{{ e.flight_img }}" alt="" /></span>
+                <p>15:20</p>
+              </div>
+              <b>6875</b>
+            </div>
+
+            <div>
+              <div>
+                <a href="">Flight Details</a>
+              </div>
+            </div>
+          </div>
+          <a id="select-ticket" class="btn">SELECT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

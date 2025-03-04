@@ -1,0 +1,25 @@
+a {
+    text-decoration: none;
+    color: grey;
+}
+#footer {
+    background-color: #F5F5F5;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--primary);
+} 
+ul {
+    line-height: 35px;
+}
+#footer > #social-links {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer > #quick-links {
+    width: 70%;
+}

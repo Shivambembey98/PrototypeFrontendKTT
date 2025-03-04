@@ -1,0 +1,54 @@
+/* new min css */
+.badge {
+  background-color: var(--light-grey) !important;
+  color: var(--black);
+}
+
+.badge:hover {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+.main {
+  background: white;
+  border-radius: 6px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-size: 18px;
+  font-family: var(--poppins);
+}
+.err-msg {
+  font-size: 14px;
+}
+.active {
+  background-color: var(--primary) !important;
+}
+
+input[type="button"]:focus {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-continue {
+  background-color: var(--primary);
+}
+
+ngx-slider .ngx-slider-pointer {
+  width: 10px !important; /* Custom width */
+  height: 10px !important; /* Custom height */
+  /* border-radius: 50%; */
+  /* background-color: #ff5722;  */
+  /* border: 2px solid #fff;  */
+}
+
+ngx-slider .ngx-slider-pointer-range {
+  width: 10px !important; 
+  height:10px !important; 
+}
+
+ngx-slider .ngx-slider-pointer:after {
+  background-color: transparent !important;
+}

@@ -1,0 +1,421 @@
+<div class="container my-1 d-flex justify-content-center">
+  <div class="">
+    <div class="card">
+      <div class="card-body col-lg-12">
+        <div class="">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="One Way"
+                (click)="toggleOneWayTrip()"
+              />
+            </li>
+            <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="Round Trip"
+                (click)="toggleRoundTrip()"
+              />
+            </li>
+            <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="Multi City"
+                (click)="toggleMultiCity()"
+              />
+            </li>
+            <!-- <li class="nav-item mx-2">
+              <input
+                type="button"
+                class="btn"
+                aria-current="page"
+                value="Group Fare"
+                (click)="toggleGroupFare()"
+              />
+            </li> -->
+          </ul>
+        </div>
+
+        <!-- One Way Form -->
+        <div *ngIf="oneWayForm" class="container my-4">
+          <form>
+            <div class="oneway-container">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">From</label>
+                  <input
+                    class="form-control"
+                    name="from"
+                    type="text"
+                    placeholder="Search here"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="from">To</label>
+                  <input
+                    class="form-control"
+                    name="to"
+                    type="text"
+                    placeholder="Type atleast 3 letters"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">Departure</label>
+                  <input
+                    class="form-control"
+                    name="departure"
+                    type="date"
+                    placeholder="Search here"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="from">Return</label>
+                  <input
+                    class="form-control"
+                    name="return"
+                    type="date"
+                    placeholder="Type atleast 3 letters"
+                    [pattern]=""
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Adult 12+ Yrs</label>
+                  <ngx-slider
+                    [(value)]="onewayValue"
+                    [options]="onewayOptions"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Children 2-12 Yrs</label>
+                  <ngx-slider
+                    [(value)]="onewayValue1"
+                    [options]="onewayOptions1"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column custom-slider">
+                  <label for="">Infants 0-2 Yrs</label>
+                  <ngx-slider
+                    [(value)]="onewayValue2"
+                    [options]="onewayOptions2"
+                  ></ngx-slider>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="">Special fares</label>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="btn badge badge-secondary">Armed Forces</span>
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Medical Professionals</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Senior Citizens</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-primary">Students</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="routes">Routes</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+                <div class="col-md-6">
+                  <label for="economy">Choose Economy</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <button
+                  [disabled]=""
+                  type="button"
+                  class="btn btn-continue"
+                  routerLink="/flight-search"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Round Trip Form -->
+        <div *ngIf="roundTripForm" class="container my-4">
+          <form>
+            <div class="roundtrip-container">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">From</label>
+                  <input
+                    class="form-control"
+                    name="from"
+                    type="text"
+                    placeholder="Search here"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="from">To</label>
+                  <input
+                    class="form-control"
+                    name="to"
+                    type="text"
+                    placeholder="Type atleast 3 letters"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">Departure</label>
+                  <input
+                    class="form-control"
+                    name="departure"
+                    type="date"
+                    placeholder="Search here"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="from">Return</label>
+                  <input
+                    class="form-control"
+                    name="return"
+                    type="date"
+                    placeholder="Type atleast 3 letters"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Adult 12+ Yrs</label>
+                  <ngx-slider
+                    [(value)]="roundtripValue"
+                    [options]="roundtripOptions"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Children 2-12 Yrs</label>
+                  <ngx-slider
+                    [(value)]="roundtripValue1"
+                    [options]="roundtripOptions1"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column custom-slider">
+                  <label for="">Infants 0-2 Yrs</label>
+                  <ngx-slider
+                    [(value)]="roundtripValue2"
+                    [options]="roundtripOptions2"
+                  ></ngx-slider>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="">Special fares</label>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="btn badge badge-secondary">Armed Forces</span>
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Medical Professionals</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Senior Citizens</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-primary">Students</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="routes">Routes</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+                <div class="col-md-6">
+                  <label for="economy">Choose Economy</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <button
+                  [disabled]=""
+                  type="button"
+                  class="btn btn-continue"
+                  routerLink="/flight-search"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Multi City Form -->
+        <div *ngIf="multiCityForm" class="container my-4">
+          <form>
+            <div class="roundtrip-container">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">From</label>
+                  <input
+                    class="form-control"
+                    name="from"
+                    type="text"
+                    placeholder="Search here"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="from">To</label>
+                  <input
+                    class="form-control"
+                    name="to"
+                    type="text"
+                    placeholder="Type atleast 3 letters"
+                    [pattern]=""
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="from">Departure</label>
+                  <input
+                    class="form-control"
+                    name="departure"
+                    type="date"
+                    placeholder="Search here"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Adult 12+ Yrs</label>
+                  <ngx-slider
+                    [(value)]="multicityValue"
+                    [options]="multicityOptions"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column">
+                  <label for="">Children 2-12 Yrs</label>
+                  <ngx-slider
+                    [(value)]="multicityValue1"
+                    [options]="multicityOptions1"
+                  ></ngx-slider>
+                </div>
+                <div class="col-md-4 d-flex flex-column custom-slider">
+                  <label for="">Infants 0-2 Yrs</label>
+                  <ngx-slider
+                    [(value)]="multicityValue2"
+                    [options]="multicityOptions2"
+                  ></ngx-slider>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="">Special fares</label>
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <span class="btn badge badge-secondary">Armed Forces</span>
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Medical Professionals</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-secondary"
+                      >Senior Citizens</span
+                    >
+                  </div>
+                  <div>
+                    <span class="btn badge badge-primary">Students</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="routes">Routes</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+                <div class="col-md-6">
+                  <label for="economy">Choose Economy</label>
+                  <input class="form-control" type="text" placeholder="All" />
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <button
+                  [disabled]=""
+                  type="button"
+                  class="btn btn-continue"
+                  routerLink="/flight-search"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Group Fare Form -->
+        <div *ngIf="groupFareForm" class="container my-4">
+          <form>
+            <h1>Group Fare Form</h1>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

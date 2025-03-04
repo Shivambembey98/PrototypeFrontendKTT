@@ -1,0 +1,47 @@
+.add-services > div {
+  width: 100%;
+  background-color: lightblue;
+}
+
+input[type="radio"]:checked + .add-services > div {
+  background-color: var(--primary) !important;
+}
+
+ul #more {
+  display: none;
+}
+.read-more {
+  color: blue;
+  cursor: pointer;
+}
+
+/* input[type="checkbox"]:checked + ul > .third {
+    display: block;
+  background-color: red;
+} */
+
+.payment-card {
+  width: 60%;
+}
+
+/* modal css */
+.modal-content {
+  width: 600px;
+}
+
+.continue-btn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+
+.background-image {
+  display: block;
+  position: fixed;
+  opacity: 0.2;
+}
+
+.btn-bookf {
+  background-color: var(--primary);
+  color: var(--white);
+}
