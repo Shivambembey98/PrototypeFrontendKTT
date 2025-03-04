@@ -59,7 +59,7 @@ jobs:
             
             # pull the repository
             git init 
-            git pull https://${{ secrets.GITHUB_PAT }}@github.com/Shivambembey98/PrototypeFrontendKTT.git main
+            git pull https://${{ secrets.PAT_GITHUB }}@github.com/Shivambembey98/PrototypeFrontendKTT.git main
 
             cd PrototypeFrontendKTT
             curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
