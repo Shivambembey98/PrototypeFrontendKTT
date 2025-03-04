@@ -51,28 +51,21 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
+            #Root user login
+            sudo su
+            
             # Update system
-            sudo apt update -y
-            # Ensure Docker is installed
-            if ! command -v docker &> /dev/null; then
-              echo "Docker is not installed. Installing..."
-              sudo apt install -y docker.io
-              sudo systemctl start docker
-              sudo systemctl enable docker
-              sudo usermod -aG docker $USER
-              sudo chmod 666 /var/run/docker.sock
+            apt update && apt upgrade -y
+            
+            # pull the repository
+            git init 
+            git pull https://${{ secrets.GITHUB_PAT }}@github.com/Shivambembey98/PrototypeFrontendKTT.git main
 
-            fi
-            # Clone the repository
-            cd ~
-            if [ ! -d "deployAngularApplication" ]; then
-              git clone https://github.com/Shivambembey98/deployAngularApplication.git
-            fi
-            cd deployAngularApplication
-            git pull origin main
-            # Build and run the Docker container
-            docker stop angular-calculator || true
-            docker rm angular-calculator || true
-            docker rmi angular-calculator || true
-            docker build -t angular-calculator .
-            docker run -d -p 8080:80 --name angular-calculator angular-calculator
+            cd PrototypeFrontendKTT
+            curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+            apt install -y nodejs
+            npm install -g @angular/cli
+            npm install 
+            ng serve --host 0.0.0.0 --port 4200 --force
+            
+            
