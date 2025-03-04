@@ -44,28 +44,44 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: SSH into EC2 and deploy Angular app
+            - name: SSH into EC2 and deploy Angular app
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
-            #Root user login
-            sudo su
+            # Switch to root user (correct way)
+            sudo -i <<EOF
             
-            # Update system
+            # Update and upgrade system packages
             apt update && apt upgrade -y
             
-            # pull the repository
-            git init 
-            git pull https://${{ secrets.PAT_GITHUB }}@github.com/Shivambembey98/PrototypeFrontendKTT.git main
-
-            cd PrototypeFrontendKTT
-            curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-            apt install -y nodejs
+            # Install dependencies
+            apt install -y curl nodejs npm
+            
+            # Install Angular CLI globally
             npm install -g @angular/cli
-            npm install 
+            
+            # Ensure Git is set up properly
+            git config --global --add safe.directory /home/${{ secrets.EC2_USER }}/PrototypeFrontendKTT
+            
+            # Clone or pull the repository
+            if [ -d "PrototypeFrontendKTT" ]; then
+              cd PrototypeFrontendKTT
+              git pull origin main
+            else
+              git clone https://${{ secrets.PAT_GITHUB }}@github.com/Shivambembey98/PrototypeFrontendKTT.git
+              cd PrototypeFrontendKTT
+            fi
+            
+            # Install Angular dependencies
+            npm install
+            
+            # Start Angular application
             ng serve --host 0.0.0.0 --port 4200 --force
+            
+            EOF
+
             
             
